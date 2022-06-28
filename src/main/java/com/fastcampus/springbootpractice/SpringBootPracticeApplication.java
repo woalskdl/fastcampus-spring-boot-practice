@@ -15,7 +15,7 @@ import org.springframework.core.env.Environment;
 
 import javax.annotation.PostConstruct;
 
-@EnableCaching
+//@EnableCaching
 @RequiredArgsConstructor
 @ConfigurationPropertiesScan
 // @Configuration annotation 생략할 경우

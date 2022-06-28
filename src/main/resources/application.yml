@@ -3,3 +3,10 @@ server:
 
 my:
   height: 185
+
+# redis cache 를 비우는 설정 > 실 운영 서버에서 캐시가 너무많이 생성되어 메모리가 가득차는 것을 방지
+# 현재 CacheConfig 를 통해 redis 설정을 적용하였기 때문에 해당코드는 적용되지 않는다.
+#spring:
+#  cache:
+#    redis:
+#      time-to-live: 1s
