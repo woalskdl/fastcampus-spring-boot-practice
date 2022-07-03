@@ -8,15 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.event.EventListener;
-import org.springframework.core.env.Environment;
-
-import javax.annotation.PostConstruct;
 
 //@EnableCaching
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @ConfigurationPropertiesScan
 // @Configuration annotation 생략할 경우
 @SpringBootApplication
@@ -27,6 +22,18 @@ public class SpringBootPracticeApplication {
 //    private final ApplicationContext applicationContext;
     private final MyProperties myProperties;
     private final StudentService studentService;
+    private final String username;
+    private final String password;
+
+    public SpringBootPracticeApplication(MyProperties myProperties,
+                                         StudentService studentService,
+                                         @Value("${spring.datasource.username}") String username,
+                                         @Value("${spring.datasource.password}") String password) {
+        this.myProperties = myProperties;
+        this.studentService = studentService;
+        this.username = username;
+        this.password = password;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootPracticeApplication.class, args);
@@ -42,9 +49,13 @@ public class SpringBootPracticeApplication {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-        studentService.printStudent("jack");
-        studentService.printStudent("jack");
-        studentService.printStudent("jack");
+//        studentService.printStudent("jack");
+//        studentService.printStudent("jack");
+//        studentService.printStudent("jack");
+
+        System.out.println("id : " + username);
+        System.out.println("password : " + password);
+
     }
 
 }

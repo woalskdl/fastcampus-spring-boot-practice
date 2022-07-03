@@ -10,3 +10,20 @@ my:
 #  cache:
 #    redis:
 #      time-to-live: 1s
+
+# vault
+spring:
+  config:
+    import: vault://
+  application:
+    name: fastcampus
+  cloud:
+    vault:
+      scheme: http
+      authentication: token
+      token: hvs.yLwJahUdPopzDswnqAckdDAF
+  datasource:
+    username:
+    password:
+  profiles:
+    active: test
