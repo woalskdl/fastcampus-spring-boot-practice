@@ -3,10 +3,13 @@ package com.fastcampus.springbootpractice.repository;
 import com.fastcampus.springbootpractice.domain.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.nativex.hint.AotProxyHint;
+import org.springframework.nativex.hint.ProxyBits;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 
+@AotProxyHint(targetClass = com.fastcampus.springbootpractice.repository.StudentRepository.class, proxyFeatures = ProxyBits.IS_STATIC)
 @RequiredArgsConstructor
 @Repository
 public class StudentRepository {
@@ -21,7 +24,8 @@ public class StudentRepository {
     }
 
     public void enroll(String name, Integer age, Student.Grade grade) {
-        storage.put(name, Student.of(name, age, grade));
+//        storage.put(name, Student.of(name, age, grade));
+        storage.put(name, new Student(name, age, grade));
     }
 
 }

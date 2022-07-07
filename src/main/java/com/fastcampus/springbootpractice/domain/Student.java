@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/*
 // Java 14 이후 나온 record 타입 활용
 public record Student  (
         String name,
@@ -21,8 +22,9 @@ public record Student  (
         A, B, C, D, F
     }
 }
+ */
 
-/* class 를 사용할 경우
+///* class 를 사용할 경우
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -34,4 +36,5 @@ public class Student {
     public enum Grade {
         A, B, C, D, F
     }
-}*/
+}
+//*/

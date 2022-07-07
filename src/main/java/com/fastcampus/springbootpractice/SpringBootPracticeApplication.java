@@ -4,10 +4,12 @@ import com.fastcampus.springbootpractice.properties.MyProperties;
 import com.fastcampus.springbootpractice.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 
 //@EnableCaching
@@ -47,15 +49,18 @@ public class SpringBootPracticeApplication {
         System.out.println("[ConfigurationProps] : " + myProperties.getHeight());
     }*/
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void init() {
+//    @EventListener(ApplicationReadyEvent.class)
+//    public void init() {
+    @Bean
+    public ApplicationRunner applicationRunner() {
 //        studentService.printStudent("jack");
 //        studentService.printStudent("jack");
 //        studentService.printStudent("jack");
 
-        System.out.println("id : " + username);
-        System.out.println("password : " + password);
-
+        return args -> {
+            System.out.println("id : " + username);
+            System.out.println("password : " + password);
+        };
     }
 
 }

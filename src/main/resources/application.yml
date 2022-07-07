@@ -13,17 +13,17 @@ my:
 
 # vault
 spring:
-  config:
-    import: vault://
+#  config:
+#    import: vault://
   application:
     name: fastcampus
-  cloud:
-    vault:
-      scheme: http
-      authentication: token
-      token: hvs.yLwJahUdPopzDswnqAckdDAF
+#  cloud:
+#    vault:
+#      scheme: http
+#      authentication: token
+#      token: hvs.yLwJahUdPopzDswnqAckdDAF
   datasource:
-    username:
-    password:
+    username: 1234
+    password: 1234
   profiles:
     active: test
