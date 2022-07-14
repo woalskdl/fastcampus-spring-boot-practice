@@ -26,9 +26,9 @@ public record Student  (
 
 ///* class 를 사용할 경우
 @NoArgsConstructor
-@AllArgsConstructor
+@AllArgsConstructor(staticName = "of")
 @Data
-public class Student {
+public class Student implements Serializable {
     private String name;
     private Integer age;
     private Grade grade;

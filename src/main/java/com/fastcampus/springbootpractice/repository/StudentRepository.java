@@ -27,7 +27,7 @@ public class StudentRepository {
 
     public void enroll(String name, Integer age, Student.Grade grade) {
 //        storage.put(name, Student.of(name, age, grade));
-        storage.put(name, new Student(name, age, grade));
+        storage.put(name, Student.of(name, age, grade));
     }
 
 }
