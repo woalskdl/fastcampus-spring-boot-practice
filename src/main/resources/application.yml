@@ -27,3 +27,8 @@ spring:
     password: 1234
   profiles:
     active: test
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/woalskdl/fastcampus-spring-boot-practice

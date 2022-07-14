@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 
@@ -17,6 +18,7 @@ import org.springframework.context.event.EventListener;
 @ConfigurationPropertiesScan
 // @Configuration annotation 생략할 경우
 @SpringBootApplication
+@EnableConfigServer
 public class SpringBootPracticeApplication {
 
 //    private final Integer height;
