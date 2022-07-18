@@ -15,10 +15,10 @@ import org.springframework.context.event.EventListener;
 
 //@EnableCaching
 //@RequiredArgsConstructor
+@EnableConfigServer
 @ConfigurationPropertiesScan
 // @Configuration annotation 생략할 경우
 @SpringBootApplication
-@EnableConfigServer
 public class SpringBootPracticeApplication {
 
 //    private final Integer height;

@@ -19,7 +19,7 @@ public class StudentRepository {
     private final Map<String, Student> storage;
 
     // Cache 로 등록함으로써 실질적으로 이 함수는 3번 호출함에도 불구하고 1번밖에 실행안됨.
-    @Cacheable("student")
+//    @Cacheable("student")
     public Student getStudent(String name) {
         System.out.println("[repo] 나의 통행료는 무척 비싸다!");
         return storage.get(name);
